@@ -1,0 +1,4 @@
+[tools]
+"aqua:gleam-lang/gleam" = "latest"
+"github:erlang/rebar3" = "latest"
+"core:erlang" = "latest"
