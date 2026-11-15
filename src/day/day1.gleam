@@ -10,7 +10,9 @@ const starting_point = 50
 const modulus = 100
 
 pub fn run() -> Result(Int, Nil) {
-  use input <- result.try(parsing.read_file_lines("priv/day1.txt"))
+  use input <- result.try(
+    parsing.read_file_lines("priv/day1.txt") |> result.replace_error(Nil),
+  )
   day1_task2(input)
 }
 

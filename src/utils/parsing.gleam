@@ -1,13 +1,12 @@
-import gleam/io
 import gleam/list
 import gleam/result
 import gleam/string
 import simplifile
 
-pub fn read_file_lines(path: String) -> Result(List(String), Nil) {
+pub fn read_file_lines(path: String) -> Result(List(String), String) {
   read_lines(path)
   |> result.map_error(fn(e) {
-    e |> simplifile.describe_error |> io.println_error
+    e |> simplifile.describe_error
   })
 }
 
