@@ -15,21 +15,21 @@ pub fn run() -> Result(Int, Nil) {
 }
 
 //find how often 0 occurs exactly when turning the wheel
-fn day1_task1(input: List(String)) -> Result(Int, Nil) {
-  use moves <- result.try(
-    input
-    |> list.try_map(parse_line),
-  )
-  use positions <- result.try(
-    moves
-    |> list.scan(Ok(starting_point), plus_mod_res)
-    |> result.all,
-  )
+// fn day1_task1(input: List(String)) -> Result(Int, Nil) {
+//   use moves <- result.try(
+//     input
+//     |> list.try_map(parse_line),
+//   )
+//   use positions <- result.try(
+//     moves
+//     |> list.scan(Ok(starting_point), plus_mod_res)
+//     |> result.all,
+//   )
 
-  positions
-  |> list.count(fn(x) { x == 0 })
-  |> Ok
-}
+//   positions
+//   |> list.count(fn(x) { x == 0 })
+//   |> Ok
+// }
 
 //find how often 0 is turned over/ended on when turning the wheel
 fn day1_task2(input: List(String)) -> Result(Int, Nil) {
