@@ -10,9 +10,8 @@ const starting_point = 50
 const modulus = 100
 
 pub fn run() -> Result(Int, Nil) {
-  use input <- result.try(parsing.read_file("priv/day1.txt"))
-  use solution <- result.map(day1_task2(input))
-  solution
+  use input <- result.try(parsing.read_file_lines("priv/day1.txt"))
+  day1_task2(input)
 }
 
 //find how often 0 occurs exactly when turning the wheel
