@@ -6,8 +6,9 @@ pub fn main() -> Nil {
 
 // gleeunit test functions end in `_test`
 pub fn hello_world_test() {
-  let name = "Joe"
-  let greeting = "Hello, " <> name <> "!"
+  let p = 1
+  let np = 1
 
-  assert greeting == "Hello, Joe!"
+  //there a no real tests here
+  assert p == np
 }

@@ -21,3 +21,17 @@ jobs:
       - run: gleam deps download
       - run: gleam test
       - run: gleam format --check src test
+
+  reading:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: mooracle/deployscope@v1
+        with:
+          timezone: Europe/Berlin
+          defy-fate: true
+          comment: true

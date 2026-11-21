@@ -5,9 +5,7 @@ import simplifile
 
 pub fn read_file_lines(path: String) -> Result(List(String), String) {
   read_lines(path)
-  |> result.map_error(fn(e) {
-    e |> simplifile.describe_error
-  })
+  |> result.map_error(fn(e) { e |> simplifile.describe_error })
 }
 
 fn read_lines(path: String) -> Result(List(String), simplifile.FileError) {
