@@ -1,5 +1,5 @@
-import gleam/io
 import gleam/int
+import gleam/io
 import gleam/list
 import gleam/result
 import gleam/string
@@ -165,7 +165,7 @@ pub fn free_spaces(pattern: SymPattern) -> Int {
   let count_slices = pattern.total_length / pattern.slice_size
   int.max(
     0,
-    pattern.total_length - { string.length(pattern.prefix) *  count_slices },
+    pattern.total_length - { string.length(pattern.prefix) * count_slices },
   )
 }
 
@@ -174,8 +174,7 @@ pub fn possible_values_in_range(
   slice_size: Int,
 ) -> Result(List(Int), String) {
   let pattern = sym_pattern(range, slice_size)
-  let cropped_prefix =
-    string.slice(pattern.prefix, 0, pattern.slice_size)
+  let cropped_prefix = string.slice(pattern.prefix, 0, pattern.slice_size)
   let slice_count = pattern.total_length / pattern.slice_size
   let free_variables = free_spaces(pattern) / slice_count
 
